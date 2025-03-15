@@ -24,7 +24,7 @@ export default async function Verify({params}) {
 
   // const url =  `${API_URL}/${site}/${adminId}/${posterId}/${verifyId}/${device}`;
 
-  const url = `${API_URL}/${site}/${adminId}/${posterId}/${device}`;s
+  const url = `${API_URL}/${site}/${adminId}/${posterId}/${device}`;
 
 
   const res = await fetch(url);

@@ -6,8 +6,8 @@ import { headers } from 'next/headers'
 
 
 export default async function Verify({params}) {
-  const { adminId, posterId, verifyId } = params;
-  console.log(adminId,posterId,verifyId)
+  const { adminId, posterId } = params;
+  console.log(adminId,posterId)
   const headersList = headers()
   let content;
   const userAgent = headersList.get("user-agent")
@@ -24,7 +24,7 @@ export default async function Verify({params}) {
 
   // const url =  `${API_URL}/${site}/${adminId}/${posterId}/${verifyId}/${device}`;
 
-  const url = verifyId ? `${API_URL}/${site}/${adminId}/${posterId}/${verifyId}/${device}`: `${API_URL}/${site}/${adminId}/${posterId}/${device}`;
+  const url = `${API_URL}/${site}/${adminId}/${posterId}/${device}`;s
 
 
   const res = await fetch(url);

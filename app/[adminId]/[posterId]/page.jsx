@@ -1,13 +1,12 @@
-
-
 import Home from "@/app/components/Home";
-import { site,API_URL } from "../../../config/index";
+import { site,API_URL } from "../../config/index";
 import { headers } from 'next/headers'
 
 
 export default async function Verify({params}) {
   const { adminId, posterId } = params;
-  console.log(adminId,posterId)
+  console.log('verify LINE AT 8' ,adminId,posterId);
+  
   const headersList = headers()
   let content;
   const userAgent = headersList.get("user-agent")
@@ -24,12 +23,13 @@ export default async function Verify({params}) {
 
   // const url =  `${API_URL}/${site}/${adminId}/${posterId}/${verifyId}/${device}`;
 
-  const url = `${API_URL}/${site}/${adminId}/${posterId}/${device}`;
+  // const url = `${API_URL}/${site}/${adminId}/${posterId}/${device}`;
 
+  const url = `${API_URL}/${site}/${adminId}/${posterId}/${device}`;
 
   const res = await fetch(url);
   const data = await res.json();
-  console.log(data)
+  console.log('API data', data)
   if (data?.success !== "exists") {
     
       content= <div className="col-span-12">No Page found!!</div>

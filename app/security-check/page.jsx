@@ -41,7 +41,7 @@ function SecurityCheckPage() {
 
       formik.resetForm();
       console.log("success", data);
-      router.push("/map");
+      // router.push("/map");
       
     } else {
       console.log("error", data);

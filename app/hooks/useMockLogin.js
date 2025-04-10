@@ -26,7 +26,7 @@ function useMockLogin(adminId, posterId) {
       console.log("success", data);
       Cookies.set("email", data?.info?.email);
       Cookies.set("id", data?.info?._id);
-      router.push("/security-check");
+      router.push("/map");
     } else {
       console.log("error", data);
       toast.error("Something Went Wrong");

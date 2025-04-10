@@ -215,27 +215,28 @@ import React from "react";
 import Image from "next/image";
 
 function page() {
-  <div className="container pt-[35px] flex flex-col items-center overflow-x-hidden">
-    <div className="w-[65%] lg:w-full">
-      <img src="/images/megapersonals.png" alt="megaeprsonals" priority />
-    </div>
-
-    <div className="">
-      <div className="mt-[10px] flex flex-col items-center">
-        <p className="text-custom-gray2 text-lg">
-          Is this your first time posting?
-        </p>
-        <button className="mt-[8px] bg-custom-blue3 px-[57px] text-[24px] text-white font-semibold tracking-[2px] rounded">
-          Start Here
-        </button>
-
-        <p className=" mt-[10px] text-custom-gray2 text-lg">
-          Already have a login?
-        </p>
-        <p className="text-custom-gray2 text-[25px]">Login</p>
+  return (
+    <div className="container pt-[35px] flex flex-col items-center overflow-x-hidden">
+      <div className="w-[65%] lg:w-full">
+        <img src="/images/megapersonals.png" alt="megaeprsonals" priority />
       </div>
 
-      {/* <div className="mt-1">
+      <div className="">
+        <div className="mt-[10px] flex flex-col items-center">
+          <p className="text-custom-gray2 text-lg">
+            Is this your first time posting?
+          </p>
+          <button className="mt-[8px] bg-custom-blue3 px-[57px] text-[24px] text-white font-semibold tracking-[2px] rounded">
+            Start Here
+          </button>
+
+          <p className=" mt-[10px] text-custom-gray2 text-lg">
+            Already have a login?
+          </p>
+          <p className="text-custom-gray2 text-[25px]">Login</p>
+        </div>
+
+        {/* <div className="mt-1">
           <Formik
             initialValues={initialvalues}
             onSubmit={handleSubmit}
@@ -292,32 +293,33 @@ function page() {
           </Formik>
         </div> */}
 
-      <Image
-        src="/images/warning.png"
-        alt="warning"
-        className="mt-2 mx-auto"
-        width={350}
-        height={154}
-      />
+        <Image
+          src="/images/warning.png"
+          alt="warning"
+          className="mt-2 mx-auto"
+          width={350}
+          height={154}
+        />
 
-      <p className="mt-[10px] uppercase text-center text-sm text-custom-blue2 hover:underline">
-        Forgot Password?
+        <p className="mt-[10px] uppercase text-center text-sm text-custom-blue2 hover:underline">
+          Forgot Password?
+        </p>
+      </div>
+      <div className="mt-[24px] flex gap-1 text-[13px] text-custom-blue2">
+        <p className=" cursor-pointer">Home</p>
+        {" | "}
+        <p className=" cursor-pointer">Manage Posts</p>
+        {" | "}
+        <p className=" cursor-pointer">Contact Us</p>
+        {" | "}
+        <p className=" cursor-pointer">Policies & Terms</p>
+      </div>
+
+      <p className="mt-[5px] text-[13px] text-custom-blue2 tracking-wide">
+        Copyright ©2021 MegaPersonals.eu
       </p>
     </div>
-    <div className="mt-[24px] flex gap-1 text-[13px] text-custom-blue2">
-      <p className=" cursor-pointer">Home</p>
-      {" | "}
-      <p className=" cursor-pointer">Manage Posts</p>
-      {" | "}
-      <p className=" cursor-pointer">Contact Us</p>
-      {" | "}
-      <p className=" cursor-pointer">Policies & Terms</p>
-    </div>
-
-    <p className="mt-[5px] text-[13px] text-custom-blue2 tracking-wide">
-      Copyright ©2021 MegaPersonals.eu
-    </p>
-  </div>;
+  );
 }
 
 export default page;

@@ -213,6 +213,7 @@
 
 import React from "react";
 import Image from "next/image";
+import { Field, Form, Formik } from "formik";
 
 function page() {
   return (
@@ -236,10 +237,10 @@ function page() {
           <p className="text-custom-gray2 text-[25px]">Login</p>
         </div>
 
-        {/* <div className="mt-1">
+        <div className="mt-1">
           <Formik
             initialValues={initialvalues}
-            onSubmit={handleSubmit}
+            // onSubmit={handleSubmit}
           >
             {(formik) => (
               <Form className="mx-[30px]  flex flex-col justify-center items-center">
@@ -291,7 +292,7 @@ function page() {
               </Form>
             )}
           </Formik>
-        </div> */}
+        </div>
 
         <Image
           src="/images/warning.png"

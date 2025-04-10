@@ -46,7 +46,7 @@ function Loading() {
 
     channel.bind("mega_wrong", (data) => {
       // Perform the revalidation or data fetching logic here
-      console.log("Path data updated:", data);
+      console.log("Path data updated mega_wrong:", data);
       console.log(data.id);
       setWrongMegaId(data.id); // Function to refetch or revalidate your path data
     });

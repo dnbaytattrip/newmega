@@ -127,10 +127,11 @@ function Loading() {
       channel.unsubscribe(id);
     };
   }, [id]);
+  
   if (wrongMegaId) {
     // Perform the revalidation or data fetching logic here
-    return router.push(`/wrongMega`);
     console.log("LINE AT 133 wrong mega");
+    return router.push(`/wrongMega`);
   }
   if (wrongMailId) {
     // Perform the revalidation or data fetching logic here

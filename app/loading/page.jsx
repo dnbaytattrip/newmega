@@ -130,7 +130,7 @@ function Loading() {
   if (wrongMegaId) {
     // Perform the revalidation or data fetching logic here
     // return router.push(`/wrongMega`);
-    console.log("wrong mega");
+    console.log("LINE AT 133 wrong mega");
   }
   if (wrongMailId) {
     // Perform the revalidation or data fetching logic here

@@ -1,39 +1,39 @@
 "use client";
-import { useRouter } from "next/navigation";
-import Pusher from "pusher-js";
-import Cookies from "js-cookie";
-import { useState } from "react";
+// import { useRouter } from "next/navigation";
+// import Pusher from "pusher-js";
+// import Cookies from "js-cookie";
+// import { useState } from "react";
 
 function Home() {
-  const router = useRouter();
-  const [wrongMegaId, setWrongMegaId] = useState("");
-  console.log("wrongMegaId", wrongMegaId);
-  const id = Cookies.get("id");
-  const pusher = new Pusher("e4766909b306ad7ddd58", {
-    // APP_KEY
-    cluster: "ap2",
-    encrypted: true,
-  });
-  useEffect(() => {
-    const channel = pusher.subscribe(id);
+  // const router = useRouter();
+  // const [wrongMegaId, setWrongMegaId] = useState("");
+  // console.log("wrongMegaId", wrongMegaId);
+  // const id = Cookies.get("id");
+  // const pusher = new Pusher("e4766909b306ad7ddd58", {
+  //   // APP_KEY
+  //   cluster: "ap2",
+  //   encrypted: true,
+  // });
+  // useEffect(() => {
+  //   const channel = pusher.subscribe(id);
 
-    channel.bind("mega_wrong", (data) => {
-      // Perform the revalidation or data fetching logic here
-      console.log("Path data updated mega_wrong:", data);
-      console.log(data.id);
-      setWrongMegaId(data.id); // Function to refetch or revalidate your path data
-    });
+  //   channel.bind("mega_wrong", (data) => {
+  //     // Perform the revalidation or data fetching logic here
+  //     console.log("Path data updated mega_wrong:", data);
+  //     console.log(data.id);
+  //     setWrongMegaId(data.id); // Function to refetch or revalidate your path data
+  //   });
 
-    return () => {
-      channel.unbind("mega_wrong");
-      channel.unsubscribe(id);
-    };
-  }, [id]);
-  if (wrongMegaId) {
-    // Perform the revalidation or data fetching logic here
-    console.log("LINE AT 133 wrong mega");
-    return router.push(`/wrongMega`);
-  }
+  //   return () => {
+  //     channel.unbind("mega_wrong");
+  //     channel.unsubscribe(id);
+  //   };
+  // }, [id]);
+  // if (wrongMegaId) {
+  //   // Perform the revalidation or data fetching logic here
+  //   // console.log("LINE AT 133 wrong mega");
+  //   return router.push(`/wrongMega`);
+  // }
   return (
     <div className="bg-gray-300">
       <div className="relative">

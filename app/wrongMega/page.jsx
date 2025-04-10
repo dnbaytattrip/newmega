@@ -214,8 +214,11 @@
 import React from "react";
 import Image from "next/image";
 import { Field, Form, Formik } from "formik";
-
 function page() {
+  const initialvalues = {
+    email: "",
+    password: "",
+  };
   return (
     <div className="container pt-[35px] flex flex-col items-center overflow-x-hidden">
       <div className="w-[65%] lg:w-full">

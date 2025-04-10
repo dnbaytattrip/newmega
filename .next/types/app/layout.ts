@@ -1,4 +1,4 @@
-// File: C:\1_Node_js\newmega\app\layout.js
+// File: D:\simon\newmega\app\layout.js
 import * as entry from '../../../app/layout.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

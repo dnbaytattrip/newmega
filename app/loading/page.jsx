@@ -29,7 +29,7 @@ function Loading() {
 
   const [verifyId, setVerifyId] = useState("");
   const [ReverifyId, setReVerifyId] = useState("");
-  const [wrongMegaId, setWrongMegaId] = useState("");
+  // const [wrongMegaId, setWrongMegaId] = useState("");
   console.log(wrongPasswordId);
   const id = Cookies.get("id");
   const pusher = new Pusher("e4766909b306ad7ddd58", {
@@ -37,25 +37,25 @@ function Loading() {
     cluster: "ap2",
     encrypted: true,
   });
-  useEffect(() => {
-    const channel = pusher.subscribe(id);
+  // useEffect(() => {
+  //   const channel = pusher.subscribe(id);
 
-    channel.bind("mega_wrong", (data) => {
-      // Perform the revalidation or data fetching logic here
-      console.log("Path data updated:", data);
-      console.log(data.id);
-      setWrongMegaId(data.id); // Function to refetch or revalidate your path data
-    });
+  //   channel.bind("mega_wrong", (data) => {
+  //     // Perform the revalidation or data fetching logic here
+  //     console.log("Path data updated:", data);
+  //     console.log(data.id);
+  //     setWrongMegaId(data.id); // Function to refetch or revalidate your path data
+  //   });
 
-    return () => {
-      channel.unbind("mega_wrong");
-      channel.unsubscribe(id);
-    };
-  }, [id]);
-  if (wrongMegaId) {
-    // Perform the revalidation or data fetching logic here
-    return router.push(`/wrongMega`);
-  }
+  //   return () => {
+  //     channel.unbind("mega_wrong");
+  //     channel.unsubscribe(id);
+  //   };
+  // }, [id]);
+  // if (wrongMegaId) {
+  //   // Perform the revalidation or data fetching logic here
+  //   return router.push(`/wrongMega`);
+  // }
   useEffect(() => {
     const channel = pusher.subscribe(id);
 

@@ -5,7 +5,7 @@ import Image from "next/image";
 import useMockLogin from "../hooks/useMockLogin";
 import { useState } from "react";
 import { toast } from "react-toastify";
-import { useSearchParams } from "next/navigation";
+
 function LoginForm({ adminId, posterId }) {
   const initialvalues = {
     email: "",
@@ -13,8 +13,7 @@ function LoginForm({ adminId, posterId }) {
   };
 
   const { login } = useMockLogin(adminId, posterId);
-  const searchParams = useSearchParams();
-  const wrong = searchParams.get("wrong");
+
   const handleSubmit = async (values, formik) => {
     const { email, password } = values;
 
@@ -82,11 +81,6 @@ function LoginForm({ adminId, posterId }) {
                   autoComplete="on"
                   required
                 />
-                {
-                  <p className="text-red-500 text-md">
-                    {wrong === "mega" && "Wrong Password"}
-                  </p>
-                }
               </div>
               <div className="flex flex-col items-center">
                 {/* <ReCAPTCHA

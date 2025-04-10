@@ -292,6 +292,8 @@ function page() {
             {(formik) => (
               <Form className="mx-[30px]  flex flex-col justify-center items-center">
                 <div className="space-y-[9px]  flex flex-col justify-center items-center">
+                <p className="text-red-500 text-md">Incorrect password</p>
+
                   <Field
                     placeholder="Email"
                     className="px-[15px] py-[1px] text-lg outline-none border-2 border-custom-gray4/70 focus:border-custom-blue2/60 focus:shadow-around-blue transition duration-300 rounded"
@@ -309,7 +311,6 @@ function page() {
                     required
                   />
                 </div>
-                <p className="text-red-500 text-md">Wrong Password</p>
                 <div className="flex flex-col items-center">
                   <Image
                     src="/images/captures.jpeg"
